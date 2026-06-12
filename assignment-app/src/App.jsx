@@ -1,12 +1,15 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router";
 
 function App() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        {/* <p> tag is a placeholder, You'll need to change the tag/component type later*/}
-        <p className="navbar-brand ms-4 nav-link">User Behavior Data</p>
-      </nav>
+      <Navbar />
+      <Routes>
+        <Route path="/" />
+        <Route path="/search" />
+        <Route path="*" />
+      </Routes>
       <hr />
     </div>
   );
