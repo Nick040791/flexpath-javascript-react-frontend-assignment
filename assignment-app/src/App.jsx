@@ -1,17 +1,19 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router";
+import { Routes, Route, } from "react-router";
+
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
+
       <Routes>
-        <Route path="/" />
-        <Route path="/search" />
-        <Route path="*" />
+        <Route path="/" element = {<HomePage/>} />
+        <Route path="/search" element = {<SearchPage/>}/>
+        <Route path="*" element = {<NotFound/>} />
       </Routes>
       <hr />
-    </div>
+    </>
   );
 }
 
