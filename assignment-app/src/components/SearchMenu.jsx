@@ -21,14 +21,14 @@ function SearchMenu(){
     }
     return (
         <section className="container py-4 text-start">  
-            <form className="row g-3 align-items-end" on onSubmit={handleSubmit}>
+            <form className="row g-3 align-items-end" onSubmit={handleSubmit}>
 
                 <div className="col-md-3">
                     <label className="form-label" htmlFor="filterType">Filter Type</label>
                     <select id="filterType" value={localFilterType} className="form-select" onChange={(event) => setLocalFilterType(event.target.value)}>
-                        {FILTER_TYPE_OPTIONS.map((option) => (<option key={option.value || 'all'}>
+                        {FILTER_TYPE_OPTIONS.map((option) => (<option value ={option.value} key={option.value || 'all'}>
                                 {option.label}
-                            </option>) )} 
+                            </option>) )}
                     </select>
                 </div>
 
@@ -49,9 +49,9 @@ function SearchMenu(){
 
             <div className="mt-3">
                 {status === 'loading' && (<p className="text-muted mb-0">Loading...</p>)}
-                {status === 'error' && (<p className="">Error: {errorMsg}</p>)}
-                {status === 'success' && (<p className="No records to display"></p>)}
-                {status === 'success' && (<p className="">Displaying {results.length.toLocalString('en-US')} Records</p>)} 
+                {status === 'error' && (<p className="text-danger mb-0">Error: {errorMsg}</p>)}
+                {status === 'success' && (<p className="text-muted mb-0">No Records To Show...</p>)}
+                {status === 'success' && (<p className="text-muted mb-0">Displaying {results.length.toLocaleString('en-US')} Records</p>)}
             </div>
         </section>
     );
