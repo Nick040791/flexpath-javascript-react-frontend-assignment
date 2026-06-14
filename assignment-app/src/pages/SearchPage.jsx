@@ -1,9 +1,9 @@
 import React from 'react';
-
+import SearchMenu from '../components/SearchMenu';
 
 const SearchPage = () => { return (
     <>
-        <h1>We searchin' stuff here...</h1>
+       <SearchMenu />
     </>
 ); 
 };

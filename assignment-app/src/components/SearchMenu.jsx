@@ -22,11 +22,39 @@ function SearchMenu(){
     return (
         <section className="container py-4 text-start">  
             <form className="row g-3 align-items-end" on onSubmit={handleSubmit}>
-                <div className="col-md-3">
 
+                <div className="col-md-3">
+                    <label className="form-label" htmlFor="filterType">Filter Type</label>
+                    <select id="filterType" value={localFilterType} className="form-select" onChange={(event) => setLocalFilterType(event.target.value)}>
+                        {FILTER_TYPE_OPTIONS.map((option) => (<option key={option.value || 'all'}>
+                                {option.label}
+                            </option>) )} 
+                    </select>
                 </div>
+
+                <div className="col-md-6">                    
+                    <label className="form-label" htmlFor="keyword">
+                        Keyword
+                    </label>
+                    <input id="keyword" className="form-control" type="search" value={localKeyword} onChange={(event) => setLocalKeyword(event.target.value)} placeholder="Enter search keyword" />
+                </div>
+
+                <div>
+                    <button className="btn btn-primary w-100" type="submit" disabled={status === 'loading'}>
+                        {status === 'loading' ? 'Searching...' : 'Search'}
+                    </button>                
+                </div>
+
             </form>
+
+            <div className="mt-3">
+                {status === 'loading' && (<p className="text-muted mb-0">Loading...</p>)}
+                {status === 'error' && (<p className="">Error: {errorMsg}</p>)}
+                {status === 'success' && (<p className="No records to display"></p>)}
+                {status === 'success' && (<p className="">Displaying {results.length.toLocalString('en-US')} Records</p>)} 
+            </div>
         </section>
-    )
-}
+    );
+};
     
+export default SearchMenu;
