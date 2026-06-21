@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 const HomePage = () => { return (
     <>
         <h1>User Behavior Dataset</h1>
@@ -10,7 +7,7 @@ const HomePage = () => { return (
 
         <ul>
             <li>User ID: Unique identifier for each user.</li>
-            <li>Device Model: Model of the user's smartphone.</li>
+            <li>Device Model: Model of the user<div> &apos; </div>s smartphone.</li>
             <li>Operating System: The OS of the device (iOS or Android).</li>
             <li>App Usage Time: Daily time spent on mobile applications, measured in minutes.</li>
             <li>Screen On Time: Average hours per day the screen is active.</li>

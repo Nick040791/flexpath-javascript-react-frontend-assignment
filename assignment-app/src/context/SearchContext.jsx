@@ -1,6 +1,11 @@
 import { createContext, useCallback, useEffect, useMemo, useState, } from 'react';
 import { VALID_FILTER_TYPES } from "../utils/constants";
+import PropTypes from 'prop-types';
+
+
 const SearchContext = createContext(null);
+
+//getSafeFilterType and getInitialResults stay as they were
 
 function getSafeFilterType(value){
     if (VALID_FILTER_TYPES.has(value)) {
@@ -33,8 +38,8 @@ export function SearchProvider({ children }){
     const [results, setResults] = useState(getInitialResults);
     const [status, setStatus] = useState('idle');
     const [errorMsg, setErrorMsg] = useState('');
-    
-    useEffect(() => { 
+
+    useEffect(() => {
         if (results.length > 0){
             localStorage.setItem('searchResults', JSON.stringify(results));
         }
@@ -80,12 +85,12 @@ export function SearchProvider({ children }){
                     setErrorMsg(error.message || 'Search Failed.');
                     localStorage.removeItem('searchResults');
 
-                    return [];    
+                    return [];
                 }
             },
         [filterType, keyword]
     );
-      
+
     const value = useMemo(
         () => ({
             filterType,
@@ -113,8 +118,12 @@ export function SearchProvider({ children }){
         </SearchContext.Provider>
     );
 }
+    //validate it
+    SearchProvider.propTypes = {
+        children: PropTypes.node.isRequired
+    };
 
 
-    
+
 
 export default SearchContext

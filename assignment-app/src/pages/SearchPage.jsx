@@ -1,11 +1,10 @@
-import React from 'react';
 import SearchMenu from '../components/SearchMenu';
 
 const SearchPage = () => { return (
     <>
-       <SearchMenu />
+        <SearchMenu />
     </>
-); 
+);
 };
 
 export default SearchPage;

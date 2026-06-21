@@ -4,10 +4,10 @@ import { FILTER_TYPE_OPTIONS } from "../utils/constants";
 
 //check filterType
 function SearchMenu(){
-    const {/* filterType,*/ setFilterType, keyword, setKeyword, results, status, errorMsg, runSearch, } = useSearch();
+    const { filterType, setFilterType, keyword, setKeyword, results, status, errorMsg, runSearch, } = useSearch();
 
-    const[localFilterType, setLocalFilterType] = useState(keyword);
-    const[localKeyword, setLocalKeyword] = useSearch(keyword);
+    const[localFilterType, setLocalFilterType] = useState(filterType);
+    const[localKeyword, setLocalKeyword] = useState(keyword);
 
     function handleSubmit(event){
         event.preventDefault();
