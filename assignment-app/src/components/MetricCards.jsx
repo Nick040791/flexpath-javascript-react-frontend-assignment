@@ -5,7 +5,6 @@ import { average, formatNumber, median } from '../utils/stats';
 
 function MetricCards() {
     const { results, status } = useSearch();
-
     const metricData = useMemo(() => {
         return METRIC_FIELDS.map((field) => {
             const values = results
@@ -50,7 +49,6 @@ function MetricCards() {
                                     <p className="card-text mb-0">
                                         Median: {formatNumber(metric.medianValue)} {metric.unit}
                                     </p>
-
                                 </div>
                             </div>
                         </div>

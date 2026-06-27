@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSearch } from '../hooks/useSearch'
 import { FILTER_TYPE_OPTIONS } from "../utils/constants";
 
-//check filterType
+
 function SearchMenu(){
     const { filterType, setFilterType, keyword, setKeyword, results, status, errorMsg, runSearch, } = useSearch();
 
