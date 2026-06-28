@@ -1,21 +1,21 @@
 export function average(numbers){
     if (!numbers.length) {
         return 0;
-    } 
+    }
     const total = numbers.reduce((sum, number) => sum + number, 0)
     return total / numbers.length;
 };
 
 export function median(numbers){
-    if (!number.length) {return 0;}
-    
+    if (!numbers.length) {return 0;}
+
     const sortedNumbers = [...numbers].sort((a, b) => a - b);
     const middleIndex = Math.floor(sortedNumbers.length / 2);
 
     if (sortedNumbers.length % 2 === 1){
         return sortedNumbers[middleIndex];
     }
-    return (sortedNumbers[middleIndex] - 1 + sortedNumbers[middleIndex]) / 2; 
+    return (sortedNumbers[middleIndex -1] + sortedNumbers[middleIndex]) / 2;
 };
 
 export function formatNumber(value){

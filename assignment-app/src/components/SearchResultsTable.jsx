@@ -1,5 +1,5 @@
 // 🡫 Grab the useSearch hook! 🡫
-import { useSearch } from '../hook/useSearch';
+import { useSearch } from '../hooks/useSearch';
 
 function SearchResultsTable(){
 
