@@ -4,7 +4,7 @@ import { useSearch } from '../hook/useSearch';
 function SearchResultsTable(){
 
     //Put the {fries and stuff} in the bag;
-    const { results, status, errorMsg } = useSearch;
+    const { results, status, errorMsg } = useSearch();
 
     // 🡫 Show a loading artifact while fetching and rendering results and stuff 🡫
     if (status ==="loading"){

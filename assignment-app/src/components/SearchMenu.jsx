@@ -51,11 +51,11 @@ function SearchMenu(){
             <div className="mt-3">
                 {status === 'loading' && (<p className="text-muted mb-0">Loading...</p>)}
                 {status === 'error' && (<p className="text-danger mb-0">Error: {errorMsg}</p>)}
-                {status === 'success' && (<p className="text-muted mb-0">No Records To Show...</p>)}
+                {status === 'success' && results.length === 0 (<p className="text-muted mb-0">No Records To Show...</p>)}
                 {status === 'success' && (<p className="text-muted mb-0">Displaying {results.length.toLocaleString('en-US')} Records</p>)}
             </div>
         </section>
     );
 };
-    
+
 export default SearchMenu;
