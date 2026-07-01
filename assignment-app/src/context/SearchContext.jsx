@@ -126,4 +126,4 @@ export function SearchProvider({ children }){
 
 
 
-export default SearchContext
+export default SearchContext;
