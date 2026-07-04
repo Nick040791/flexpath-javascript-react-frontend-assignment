@@ -42,7 +42,7 @@ function SearchMenu(){
                     </select>
                 </div>
 
-                <div className="col-md-6">                    
+                <div className="col-md-6">
                     <label className="form-label" htmlFor="keyword">
                         Keyword
                     </label>
@@ -61,7 +61,7 @@ function SearchMenu(){
                 {status === 'loading' && (<p className="text-muted mb-0">Loading...</p>)}
                 {status === 'error' && (<p className="text-danger mb-0">Error: {errorMsg}</p>)}
                 {status === 'success' && results.length > 0 && (
-                    <p className="text-muted mb-0">Displaying {results.length.toLocaleString('en-US')} Records</p>
+                    <p className="text-muted mb-0">Displaying {results.length} Records</p>
                 )}
             </div>
         </section>
@@ -69,12 +69,3 @@ function SearchMenu(){
 };
 
 export default SearchMenu;
-
-/*
-    Bug: search results do not display
-    lines to check:
-
-    1. display div -- 61-67
-    2. results definition -- 14
-
-*/

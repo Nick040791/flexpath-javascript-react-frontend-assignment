@@ -1,10 +1,11 @@
 // 🡫 Grab the useSearch hook! 🡫
-import { useSearch } from '../hooks/useSearch';
+import { useSearch } from "../hooks/useSearch";
 
 function SearchResultsTable(){
 
     //Put the {fries and stuff} in the bag;
-    const { results, status, errorMsg } = useSearch();
+    const { results = [] , status = "loading", errorMsg = "" } = useSearch();
+
 
     // 🡫 Show a loading artifact while fetching and rendering results and stuff 🡫
     if (status ==="loading"){
@@ -18,7 +19,7 @@ function SearchResultsTable(){
   if (results.length === 0) {
     return (
       <section className="container py-4 text-start">
-        {status === 'error' && (
+        {status === "error" && (
           <div className="text-danger mb-3">Error: {errorMsg}</div>
         )}
 
@@ -31,7 +32,7 @@ function SearchResultsTable(){
 
   return (
     <section className="container py-4 text-start">
-      {status === 'error' && (
+      {status === "error" && (
         <div className="text-danger mb-3">Error: {errorMsg}</div>
       )}
 
@@ -49,7 +50,7 @@ function SearchResultsTable(){
 
           <tbody>
             {results.map((record, index) => (
-              <tr key={record['User ID'] || index}>
+              <tr key={record["User ID"] || index}>
                 {headers.map((header) => (
                   <td key={header}>{record[header]}</td>
                 ))}
