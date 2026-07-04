@@ -53,7 +53,7 @@ router.get("/data/search", (req, res, next) => {
             0;
           break;
         case "bc":
-          include = record["User Behavior Class"].toLowerCase === lower_keyword;
+          include = record["User Behavior Class"].toLowerCase() === lower_keyword;
           break;
         default:
           return false;
