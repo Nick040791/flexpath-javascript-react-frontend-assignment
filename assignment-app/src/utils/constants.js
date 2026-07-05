@@ -1,4 +1,4 @@
-export const FILTER_TYPE_OPTIONS = 
+export const FILTER_TYPE_OPTIONS =
 [
     {
         value:'', 
