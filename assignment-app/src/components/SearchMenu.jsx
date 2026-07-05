@@ -31,6 +31,7 @@ function SearchMenu(){
 
     return (
         <section className="container py-4 text-start">
+            <div className="p-4 bg-light rounded-3 shadow-sm border">
             <form className="row g-3 align-items-end" onSubmit={handleSubmit}>
 
                 <div className="col-md-3">
@@ -49,13 +50,14 @@ function SearchMenu(){
                     <input id="keyword" className="form-control" type="search" value={localKeyword} onChange={(event) => setLocalKeyword(event.target.value)} placeholder="Enter search keyword" />
                 </div>
 
-                <div>
+                <div className="col-md-3">
                     <button className="btn btn-primary w-100" type="submit" disabled={status === 'loading'}>
                         {status === 'loading' ? 'Searching...' : 'Search'}
-                    </button>                
+                    </button>
                 </div>
 
             </form>
+            </div>
 
             <div className="mt-3">
                 {status === 'loading' && (<p className="text-muted mb-0">Loading...</p>)}

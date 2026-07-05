@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useSearch } from './hooks/useSearch';
+import { useSearch } from '../hooks/useSearch';
 import { METRIC_FIELDS } from '../utils/constants';
 import { average, formatNumber, median } from '../utils/stats';
 
