@@ -33,7 +33,7 @@ export const METRIC_FIELDS = [
         unit: 'Minutes',
     },
     {
-       key: 'Screen on Time',
+       key: 'Screen On Time (hours/day)',
        title: 'Screen On Time',
        unit: 'Hours',
     },
