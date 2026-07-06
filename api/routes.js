@@ -12,14 +12,14 @@ router.get("/data/search", (req, res, next) => {
     - behaviorClass
   */
 
-  const filterType = req.query.filterType || null;
+  const filterType = req.query.filterType;
   const keyword = req.query.keyword || null;
+  let searchType = "unfiltered"; // default the search type
 
-  let searchType;
-  if (filterType) {
+  if (filterType && filterType !=="") { // if filter type is truthy and not empty
     const lower_case = filterType.toLowerCase();
-    searchType =
-      lower_case === "model"
+
+        searchType = lower_case==="model"
         ? "m"
         : lower_case === "gender"
         ? "g"
@@ -53,7 +53,7 @@ router.get("/data/search", (req, res, next) => {
             0;
           break;
         case "bc":
-          include = record["User Behavior Class"] === lower_keyword;
+          include = record["User Behavior Class"].toLowerCase() === lower_keyword;
           break;
         default:
           return false;
